@@ -1,0 +1,13 @@
+{
+  "dart.flutterSdkPath": "~/.asdf/installs/flutter/3.24.3-stable",
+  
+  "[json]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+
+  "[dart]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  }
+}
