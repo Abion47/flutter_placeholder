@@ -22,21 +22,16 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
-          body: LayoutBuilder(builder: (context, constraints) {
-            return Center(
-              child: SingleChildScrollView(
-                child: SizedBox(
-                  width: 300,
-                  height: 500,
-                  child: ShadowText.words(
-                    seed: seed,
-                    shadowHeight: 12,
-                    cornerRadius: 4,
-                  ),
-                ),
-              ),
-            );
-          }),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Expanded(child: PlaceholderImage.scaffold()),
+                Expanded(child: PlaceholderImage.gradient()),
+                Expanded(child: PlaceholderImage.checkerboard()),
+              ],
+            ),
+          ),
         ),
       ),
     );

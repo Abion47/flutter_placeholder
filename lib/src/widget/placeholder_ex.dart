@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import '../utility/lipsum/definibus.dart';
 import 'text/lipsum.dart';
 import 'text/shadow.dart';
+import 'image/image.dart';
 
 export 'text/lipsum.dart';
 
@@ -99,4 +100,31 @@ abstract class PlaceholderEx extends StatelessWidget {
     double? lineSpacing,
     int? seed,
   }) = ShadowText.words;
+
+  const factory PlaceholderEx.image({
+    Key? key,
+    Color? primary,
+    Color? secondary,
+    Size? size,
+    String? caption,
+    TextStyle? captionStyle,
+  }) = PlaceholderImage.scaffold;
+
+  const factory PlaceholderEx.imageGradient({
+    Key? key,
+    Color? primary,
+    Color? secondary,
+    Size? size,
+    String? caption,
+    TextStyle? captionStyle,
+  }) = PlaceholderImage.gradient;
+
+  const factory PlaceholderEx.imageCheckerboard({
+    Key? key,
+    Color? primary,
+    Color? secondary,
+    Size? size,
+    String? caption,
+    TextStyle? captionStyle,
+  }) = PlaceholderImage.checkerboard;
 }

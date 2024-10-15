@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_placeholder/src/widget/placeholder_ex.dart';
 
 enum _PlaceholderImageMode {
   scaffold,
@@ -6,7 +7,7 @@ enum _PlaceholderImageMode {
   checkerboard,
 }
 
-class PlaceholderImage extends StatelessWidget {
+class PlaceholderImage extends PlaceholderEx {
   final Color? primary;
   final Color? secondary;
   final Size? size;
@@ -47,7 +48,7 @@ class PlaceholderImage extends StatelessWidget {
     final captionStyleWithColor = captionStyle == null
         ? null
         : captionStyle!.color == null
-            ? captionStyle!.copyWith(color: Color(0xFFFFFFFF))
+            ? captionStyle!.copyWith(color: const Color(0xFFFFFFFF))
             : captionStyle;
     final captionTextStyle =
         DefaultTextStyle.of(context).style.merge(captionStyleWithColor);
@@ -231,7 +232,7 @@ class _PlaceholderImageGradientInternal extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [primary, secondary],
-            stops: [0, 1],
+            stops: const [0, 1],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
