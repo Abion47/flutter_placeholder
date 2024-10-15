@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'sandbox.dart';
+
 import 'package:flutter_placeholder/flutter_placeholder.dart';
 
 void main() {
@@ -17,10 +19,24 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const seed = 50;
 
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: PlaceholderEx.lipsum(6, seed: seed),
+    return MaterialApp(
+      home: SafeArea(
+        child: Scaffold(
+          body: LayoutBuilder(builder: (context, constraints) {
+            return Center(
+              child: SingleChildScrollView(
+                child: SizedBox(
+                  width: 300,
+                  height: 500,
+                  child: ShadowText.words(
+                    seed: seed,
+                    shadowHeight: 12,
+                    cornerRadius: 4,
+                  ),
+                ),
+              ),
+            );
+          }),
         ),
       ),
     );

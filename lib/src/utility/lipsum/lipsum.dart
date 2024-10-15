@@ -19,14 +19,14 @@ final class Lipsum {
     Random? random,
     bool startWithLorem = false,
   }) {
-    if (wordCount == 0) return [];
+    if (wordCount == 0) return List.empty(growable: false);
     if (wordCount <= 5 && startWithLorem) {
       return _loremWords.take(wordCount).toList();
     }
 
     return wordGenerator(random: random, startWithLorem: startWithLorem)
         .take(wordCount)
-        .toList();
+        .toList(growable: false);
   }
 
   Iterable<String> wordGenerator({
@@ -53,12 +53,12 @@ final class Lipsum {
     Random? random,
     bool startWithLorem = false,
   }) {
-    if (lineCount == 0) return [];
+    if (lineCount == 0) return List.empty(growable: false);
     if (lineCount == 1 && startWithLorem) return [_loremLine];
 
     return lineGenerator(random: random, startWithLorem: startWithLorem)
         .take(lineCount)
-        .toList();
+        .toList(growable: false);
   }
 
   Iterable<String> lineGenerator({
@@ -87,14 +87,14 @@ final class Lipsum {
     int minSentencesPer = 3,
     int maxSentencesPer = 6,
   }) {
-    if (paragraphCount == 0) return [];
+    if (paragraphCount == 0) return List.empty(growable: false);
 
     return paragraphGenerator(
       random: random,
       startWithLorem: startWithLorem,
       minSentencesPer: minSentencesPer,
       maxSentencesPer: maxSentencesPer,
-    ).take(paragraphCount).toList();
+    ).take(paragraphCount).toList(growable: false);
   }
 
   Iterable<String> paragraphGenerator({

@@ -2,10 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_placeholder/flutter_placeholder.dart';
 
-import '../../../flutter_placeholder.dart';
-
-final class ShadowText extends PlaceholderEx {
+final class ShadowText extends StatelessWidget {
   final int? words;
   final Color? color;
   final double? shadowHeight;
